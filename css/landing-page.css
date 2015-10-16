@@ -22,7 +22,7 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .lead {
@@ -167,4 +167,9 @@ footer {
 
 p.copyright {
     margin: 15px 0 0;
+}
+
+.img-responsive {
+    max-width: 300px;
+    max-height: 260px;
 }
