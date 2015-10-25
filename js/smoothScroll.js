@@ -14,7 +14,7 @@ $(function() {
   });
 });
 
-//This function should be use to get the lang query string value from the URL.
+//Get the lang query string value from the URL.
 function getQueryString(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split('&');
@@ -28,9 +28,10 @@ function getQueryString(variable) {
     return null;
 }
 
-//Then you get the html element and set to it the lang attribute.
+//Get the html element and set to it the lang attribute.
 var html = document.getElementsByTagName('html')[0];
-var lang = getQueryString('lang');
+var lang = getQueryString('lang') || navigator.language || navigator.userLanguage;
 if (lang) {
+  lang = lang.substring(0, 2);
   html.setAttribute('lang', lang);
 }
