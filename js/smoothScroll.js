@@ -1,3 +1,4 @@
+//smooth scrolling to links
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -12,3 +13,24 @@ $(function() {
     }
   });
 });
+
+//This function should be use to get the lang query string value from the URL.
+function getQueryString(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (decodeURIComponent(pair[0]).toLowerCase() == variable.toLowerCase()) {
+            return decodeURIComponent(pair[1]);
+        }
+    }
+
+    return null;
+}
+
+//Then you get the html element and set to it the lang attribute.
+var html = document.getElementsByTagName('html')[0];
+var lang = getQueryString('lang');
+if (lang) {
+  html.setAttribute('lang', lang);
+}

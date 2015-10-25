@@ -217,3 +217,7 @@ p.copyright {
               justify-content: center;
   }
 }
+
+html[lang=de] *[lang=en], html[lang=en] *[lang=de] {
+    display: none;
+}
