@@ -33,5 +33,8 @@ var html = document.getElementsByTagName('html')[0];
 var lang = getQueryString('lang') || navigator.language || navigator.userLanguage;
 if (lang) {
   lang = lang.substring(0, 2);
+  if (lang !== 'de') {
+    lang = 'en'
+  }
   html.setAttribute('lang', lang);
 }
