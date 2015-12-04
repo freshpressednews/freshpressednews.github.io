@@ -38,3 +38,8 @@ if (lang) {
   }
   html.setAttribute('lang', lang);
 }
+
+var details = getQueryString('details');
+if (details) {
+  document.getElementById("details").style.display = "block";
+}
